@@ -12,6 +12,7 @@ function areThereDuplicates(...arg: (number | string)[]) {
     }
     map[arg[i]] = 1;
   }
+
   return false;
 }
 

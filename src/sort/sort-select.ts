@@ -1,18 +1,15 @@
-function SelectSort(arr: number[]) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    let minIdx = i; //초기는 나 자신
-    let swap = false;
-
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[minIdx] > arr[j]) {
+function selectSort(arr: number[]) {
+  for (let cur = 0; cur < arr.length; cur++) {
+    let minIdx = cur; //최소를 담는다
+    for (let j = cur + 1; j < arr.length; j++) {
+      if (arr[cur] > arr[j]) {
         minIdx = j;
-        swap = true;
       }
     }
-    if (!swap) break;
-    [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
+    [arr[cur], arr[minIdx]] = [arr[minIdx], arr[cur]];
   }
+
   return arr;
 }
 
-console.log(SelectSort([10, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(selectSort([1, 6, 3, 7, 2, 10]));
