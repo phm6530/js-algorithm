@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class LinkedList {
+export class LinkedList {
   constructor() {
     this.head = null;
     this.count = 0;
@@ -48,7 +48,7 @@ class LinkedList {
       curNode = curNode.next;
     }
 
-    console.log(curNode);
+    return curNode;
   }
 
   clean() {
@@ -64,7 +64,6 @@ class LinkedList {
       for (let i = 0; i < idx; i++) {
         prevNode = prevNode.next;
       }
-
       prevNode.next = prevNode.next.next;
       return prevNode;
     }

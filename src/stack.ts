@@ -1,40 +1,32 @@
-import { linkedList } from "./linked-list/index.js";
+import { LinkedList, Node } from "./01.linked-list.js";
 
 class Stack<T> {
-  constructor(private list: linkedList<T> = new linkedList()) {}
-
+  constructor(public list: LinkedList<T>) {}
   pop() {
-    return this.list.deleteNode(0)?.data;
+    return this.list.deleteAt(-1);
   }
 
   push(data: T) {
-    this.list.insertNode(0, data);
+    return this.list.insertAt(this.list.count - 1, data);
   }
 
-  peek() {
-    this.list.getNode(0);
-  }
-
-  isEmpty() {
-    return this.list.size() === 0;
-  }
-
-  printStack() {
-    return this.list.printAll();
+  clean() {
+    return this.list.clean();
   }
 }
 
-const stack = new Stack();
-stack.push(0);
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.push(4);
-console.log(stack.printStack());
+const list = new LinkedList<number>();
+list.insertAt(0, 0);
+list.insertAt(1, 1);
+list.insertAt(2, 2);
+list.insertAt(0, 99);
+list.insertAt(1, 1000);
 
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.isEmpty());
+// console.log(list.count);
+const confirms = list.print();
+console.log(confirms);
+
+const stack = new Stack<number>(list);
+stack.push(2);
+const confirmss = list.print();
+console.log(confirmss);
