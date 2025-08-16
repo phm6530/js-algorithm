@@ -105,7 +105,9 @@ export class LinkedList<T> {
       deleteNode = this.tail;
       if (this.tail?.prev) {
         this.tail = this.tail.prev;
-        this.tail.next = null;
+        if (this.tail.next) {
+          this.tail.next = null;
+        }
       } else {
         this.head = null;
         this.tail = null;
