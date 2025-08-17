@@ -4,23 +4,27 @@ class Queue<T> {
   constructor(private list: DoubleLinkedList<T> = new DoubleLinkedList()) {}
 
   enQueue(data: T) {
-    return this.list.insertAt(0, data);
+    this.list.insertAt(0, data);
   }
 
   deQueue() {
-    return this.list.deleteAt(this.list.count - 1);
+    return this.list.deleteAt(this.list.cnt() - 1);
+  }
+
+  clean() {
+    this.list.clean();
   }
 
   print() {
-    console.log(this.list.count);
-    this.list.printList();
+    this.list.print();
   }
 }
 
-const fifo = new Queue();
+const fifo = new Queue<number>();
+fifo.enQueue(0);
 fifo.enQueue(1);
 fifo.enQueue(2);
-fifo.deQueue();
-fifo.deQueue();
+fifo.clean();
 
+// print
 fifo.print();
