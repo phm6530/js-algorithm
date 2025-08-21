@@ -15,16 +15,29 @@ class Queue<T> {
     this.list.clean();
   }
 
+  peek(idx: number) {
+    try {
+      const cnt = this.list.cnt();
+      return this.list.getNodeAt(cnt - idx - 1);
+    } catch (err) {
+      const error = err as Error;
+      console.log(error.message);
+    }
+  }
+
   print() {
     this.list.print();
   }
 }
 
 const fifo = new Queue<number>();
+
 fifo.enQueue(0);
 fifo.enQueue(1);
 fifo.enQueue(2);
-fifo.clean();
 
-// print
+const pick = fifo.peek(0);
+console.log("Pick : ", pick);
+
+// print,
 fifo.print();

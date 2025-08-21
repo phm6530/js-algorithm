@@ -7,7 +7,7 @@ export class Node<T> {
   ) {}
 }
 
-//이중 링크드 리스트
+// Main
 export class DoubleLinkedList<T> {
   constructor(
     private head: Node<T> | null = null,
@@ -22,7 +22,7 @@ export class DoubleLinkedList<T> {
   insertAt(idx: number, data: T) {
     const newNode = new Node(data);
 
-    //first Idx
+    // first
     if (idx === 0) {
       newNode.next = this.head;
       this.head = newNode;
@@ -31,7 +31,8 @@ export class DoubleLinkedList<T> {
         newNode.next.prev = newNode;
       }
     }
-    //Last Idx
+
+    // Last
     else if (idx === this.count) {
       newNode.next = null;
       newNode.prev = this.tail;
@@ -41,7 +42,7 @@ export class DoubleLinkedList<T> {
       }
     }
 
-    //중간 노드 삽입
+    // 중간 노드 삽입
     else {
       let node = this.head;
       for (let i = 0; i < idx - 1; i++) {
@@ -49,7 +50,7 @@ export class DoubleLinkedList<T> {
         else break;
       }
 
-      //새로운 노드에 prev, next 삽입
+      // 새로운 노드에 prev, next 삽입
       newNode.next = node!.next;
       node!.next = newNode;
       newNode.prev = node;
@@ -60,11 +61,15 @@ export class DoubleLinkedList<T> {
     if (newNode.next === null) {
       this.tail = newNode;
     }
-    //Insert Count 증가
+
+    // insert Count 증가
     this.count++;
   }
 
   getNodeAt(idx: number) {
+    if (idx < 0 || idx > this.count - 1) {
+      throw new Error("잘못된 인덱스 번호 입니다.");
+    }
     let getNode = this.head;
     if (idx === this.count - 1) {
       getNode = this.tail;
