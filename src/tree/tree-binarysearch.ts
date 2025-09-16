@@ -1,4 +1,6 @@
 // 이진트리
+// 삽입 O(log N)
+// 검색 O(log N)
 
 class Node<T> {
   constructor(
@@ -9,7 +11,7 @@ class Node<T> {
 }
 
 class BinarySearchTree<T> {
-  constructor(private root: null | Node<T> = null) {}
+  constructor(public root: null | Node<T> = null) {}
 
   insert(val: T) {
     let newNode = new Node(val);
@@ -37,6 +39,26 @@ class BinarySearchTree<T> {
       }
     }
   }
+
+  find(val: T) {
+    // 기준점
+    let curNode = this.root;
+
+    if (!curNode || curNode.val === null) return undefined;
+    while (curNode) {
+      if (curNode.val === val) {
+        return curNode;
+      }
+
+      if (curNode.val! < val) {
+        curNode = curNode.right;
+      } else {
+        curNode = curNode.left;
+      }
+    }
+
+    return undefined;
+  }
 }
 
-export {};
+export { BinarySearchTree };
