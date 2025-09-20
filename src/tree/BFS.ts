@@ -1,10 +1,10 @@
 import { BinarySearchTree } from "./tree-binarysearch.js";
 
 const BST = new BinarySearchTree();
-BST.insert(10);
-BST.insert(5);
-BST.insert(7);
-BST.insert(3);
+
+const arr = [1, 5, 4, 7, 10, 6, 77, 23];
+
+for (const num of arr) BST.insert(num);
 
 function BFS<T>(tree: BinarySearchTree<T>) {
   let queue = [],
@@ -22,3 +22,9 @@ function BFS<T>(tree: BinarySearchTree<T>) {
 }
 
 console.log(BFS(BST));
+
+function Havery() {
+  for (let i = 0; i < 100000000; i++) {
+    console.log("많은 연");
+  }
+}

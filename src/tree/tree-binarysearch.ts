@@ -2,7 +2,7 @@
 // 삽입 O(log N)
 // 검색 O(log N)
 
-class Node<T> {
+export class Node<T> {
   constructor(
     public val: T | null = null,
     public left: Node<T> | null = null,
