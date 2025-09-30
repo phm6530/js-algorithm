@@ -1,16 +1,14 @@
-<<<<<<< HEAD
-# compiled output
+t
 /dist
 /node_modules
 /build
 
-=======
->>>>>>> a84abd22ffd0d061604f8d436e15783fe72e828a
+
 # Logs
 logs
 *.log
 npm-debug.log*
-<<<<<<< HEAD
+
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -83,4 +81,3 @@ dist-ssr
 *.sw?
 /dist
 
->>>>>>> a84abd22ffd0d061604f8d436e15783fe72e828a
