@@ -2,7 +2,7 @@
 
 // 헬퍼함수 필요
 function pivot(arr: number[], start = 0, end = arr.length): number {
-  const pivotPoint = arr[start]; // 피벗 포인트
+  const pivotPoint = arr[start];
   let swapIdx = start;
 
   for (let i = start + 1; i < end; i++) {
@@ -26,7 +26,6 @@ function quickSort(arr: number[], left = 0, right = arr.length): number[] {
     // 오른쪽 부분 정렬
     quickSort(arr, pivotIndex + 1, right);
   }
-
   return arr;
 }
 const arr: number[] = [4, 8, 2, 1, 5, 7, 6, 3];

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "js-algorithm",
+=======
+  "name": "algorithm",
+>>>>>>> a84abd22ffd0d061604f8d436e15783fe72e828a
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +14,12 @@
   "license": "ISC",
   "type": "module",
   "description": "",
+<<<<<<< HEAD
   "devDependencies": {
     "typescript": "^5.8.2"
+=======
+  "dependencies": {
+    "typescript": "^5.9.2"
+>>>>>>> a84abd22ffd0d061604f8d436e15783fe72e828a
   }
 }
